@@ -4,7 +4,7 @@
 *					Receive a notification based on keywords 																									*
 *					Quickly message the player using buttons																									*
 *																																								*
-*					https://github.com/lemasato/POE-Keyword-Notifier/																							*
+*					https://github.com/lemasatodev/POE-Keyword-Notifier/																							*
 *					https://www.pathofexile.com/forum/view-thread/1755148/page/30#p15037215																		*
 *																																								*	
 *	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
@@ -80,7 +80,7 @@ Start_Script() {
 	PROGRAM.NAME 							:= "POE Keyword Notifier"
 	PROGRAM.VERSION 						:= "0.3.2"
 	; Github repo infos
-	PROGRAM.GITHUB_USER 					:= "lemasato"
+	PROGRAM.GITHUB_USER 					:= "lemasatodev"
 	PROGRAM.GITHUB_REPO 					:= "POE-Keyword-Notifier"
 	PROGRAM.BRANCH 							:= "master"
 	; Folders

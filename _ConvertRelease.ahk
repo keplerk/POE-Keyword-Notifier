@@ -16,12 +16,12 @@ inputFile := "POE Keyword Notifier.ahk"
 outputFile := "POE Keyword Notifier.exe"
 
 Run_Ahk2Exe(inputFile, ,A_ScriptDir "/resources/icon.ico")
-Set_FileInfos(outputFile, verFull, desc, "© lemasato.github.io " A_YYYY)
+Set_FileInfos(outputFile, verFull, desc, "© lemasatodev.github.io " A_YYYY)
 fileInfos := FileGetInfo(outputFile)
 while (fileInfos.FileVersion != verFull) {
 	ToolTip, #%A_Index%`nAttempting to set file infos for file:`n%outputFile%
 	fileInfos := FileGetInfo(outputFile)
-	Set_FileInfos(outputFile, verFull, desc, "© lemasato.github.io " A_YYYY)
+	Set_FileInfos(outputFile, verFull, desc, "© lemasatodev.github.io " A_YYYY)
 	Sleep 500
 }
 ToolTip,
@@ -40,12 +40,12 @@ inputFile := "Updater_v2.ahk"
 outputFile := "Updater_v2.exe"
 
 Run_Ahk2Exe(inputFile, ,A_ScriptDir "/resources/icon.ico")
-Set_FileInfos(outputFile, verFull, desc, "© lemasato.github.io " A_YYYY)
+Set_FileInfos(outputFile, verFull, desc, "© lemasatodev.github.io " A_YYYY)
 fileInfos := FileGetInfo(outputFile)
 while (fileInfos.FileVersion != verFull) {
 	ToolTip, #%A_Index%`nAttempting to set file infos for file:`n%outputFile%
 	fileInfos := FileGetInfo(outputFile)
-	Set_FileInfos(outputFile, verFull, desc, "© lemasato.github.io " A_YYYY)
+	Set_FileInfos(outputFile, verFull, desc, "© lemasatodev.github.io " A_YYYY)
 	Sleep 500
 }
 ToolTip,
