@@ -1,0 +1,69 @@
+-----------------------
+v0.3.2 (18 June 2018)
+	Added:
+	- Prevent duplicate messages from showing up on the interface.
+	Note that this only work if the message are exactly the same.
+	- A timestamp can be seen on the top right of the interface.
+	Hovering this same timetamp will show how long ago was the message received.
+	- You can now check for updates manually from the tray menu.
+	Previously, update checking would only be done by the tool on start, every 35 minutes.
+	
+	Changes:
+	- Keyboard keys Enter/Esc/Space/Arrows can no longer work on the interface.
+	This prevents accidently pressing one of the button while the interface has focus.
+	
+	Fixes:
+	- The interface would take focus upon showing a new tab.
+	- Tabs now only take one row.
+	As more tabs were created, they would hide the "Close" button.
+	
+-----------------------
+v0.3.1 (28 Feb 2018)
+	Added:
+	- Choose which chat channels to allow.
+	- Tooltips on controls from the Settings interface.
+	
+	Changes:
+	- Removed the splash-text on startup.
+
+-----------------------
+v0.3 (10 Jan 2018)
+	Changes:
+	- Messages are now sent using the clibpoard, just like how it is in Trades Companion.
+
+-----------------------
+v0.2.1 (05 Dec 2017)
+	Changes:
+	- Messages are no longer being forced as whisper.
+	Previous messages will be automatically updated to use the @%player% prefix.
+	
+	Fixes:
+	- Space character would be blocked.
+	- Whitespaces at the end of the messages were being ignored.
+	- Special characters (such as ^$[! etc) could cause issues.
+	- Settings menu: The edit boxes could take multiple rows based on its content.
+
+-----------------------
+v0.2 (28 Nov 2017)
+	Public-test ready.
+	
+	Fixes:
+	- Tooltips would not be positionned correctly when the GUI was not the active window.
+
+-----------------------
+v0.1.2 (28 Nov 2017)
+	Fixes:
+	- Yet more auto-updater related fixes.
+
+-----------------------
+v0.1.1 (28 Nov 2017)
+	Added:
+	- Version number and GitHub link in the settings menu.
+	
+	Fixes:
+	- Updating issues due to missing JSON library.
+
+-----------------------
+v0.1 (28 Nov 2017):
+	Initially published on Github.
+	
