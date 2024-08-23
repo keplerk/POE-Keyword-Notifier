@@ -8,7 +8,7 @@ Quickly message the player using buttons
 </p> <!-- Interface GIF -->
 
 ## Downloading & Installing
-1. Head to the [releases tab](https://github.com/lemasatodev/POE-Keyword-Notifier/releases). Alternatively, use the [latest release link](https://github.com/lemasatodev/POE-Keyword-Notifier/releases/latest).  
+1. Head to the [releases tab](https://github.com/keplerk/POE-Keyword-Notifier/releases). Alternatively, use the [latest release link](https://github.com/keplerk/POE-Keyword-Notifier/releases/latest).  
 1. Click on the <i>POE-Keyword-Notifier.exe</i> file. The download will start automatically.  
 1. Once downloaded, simply run the executable. No installation required.  
    You may move the executable wherever you want.  
