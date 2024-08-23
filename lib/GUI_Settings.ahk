@@ -13,7 +13,7 @@
 		Gui, Settings:New, +AlwaysOnTop +ToolWindow +LabelGUI_Settings_ +HwndhGUI_Settings
 		Gui, Settings:Font,S8,Segoe UI
 
-		Gui, Settings:Add, Text, x10 y10,Transparency (50-255): 
+		Gui, Settings:Add, Text, x10 y10,Transparency (50-255):
 		Gui, Settings:Add, Edit, x+5 yp-3 w60 Number ReadOnly vEDIT_Transparency hwndhEDIT_Transparency,% config_Settings.Transparency
 		Gui, Settings:Add, UpDown, x+0 hp -16 Range10-51 Wrap gGUI_Settings.OnUpDown_Change vUPDOWN_Transparency hwndhUPDOWN_Transparency,% config_Settings.Transparency / 5
 
@@ -42,23 +42,35 @@
 		Gui, Settings:Add, Button, x+5 w100 gGUI_Settings.AddKeyword,Add
 		Gui, Settings:Add, Button, x+5 w100 gGUI_Settings.RemoveKeyword,Remove
 
-		Gui, Settings:Add, GroupBox, x10 y+10 w435 h55 c000000,Button 1
+		Gui, Settings:Add, GroupBox, x10 y+10 w500 h55 c000000,Button 1
 		Gui, Settings:Add, Text, x25 yp+25,Name:
 		Gui, Settings:Add, Edit, x+5 yp-3 w95 vEDIT_BTN1_Name hwndhEDIT_BTN1_Name R1,% config_Buttons.Button_1_Name
 		Gui, Settings:Add, Text, x+5 yp+3,Message:
 		Gui, Settings:Add, Edit, x+5 yp-3 w220 vEDIT_BTN1_Message hwndhEDIT_BTN1_Message R1,% config_Buttons.Button_1_Message
 
-		Gui, Settings:Add, GroupBox, x10 y+15 w435 h55 c000000,Button 2
+		Gui, Settings:Add, GroupBox, x10 y+15 w500 h55 c000000,Button 2
 		Gui, Settings:Add, Text, x25 yp+25,Name:
 		Gui, Settings:Add, Edit, x+5 yp-3 w95 vEDIT_BTN2_Name hwndhEDIT_BTN2_Name R1,% config_Buttons.Button_2_Name
 		Gui, Settings:Add, Text, x+5 yp+3,Message:
 		Gui, Settings:Add, Edit, x+5 yp-3 w220 vEDIT_BTN2_Message hwndhEDIT_BTN2_Message R1,% config_Buttons.Button_2_Message
 
-		Gui, Settings:Add, GroupBox, x10 y+15 w435 h55 c000000,Button 3
+		Gui, Settings:Add, GroupBox, x10 y+15 w500 h55 c000000,Button 3
 		Gui, Settings:Add, Text, x25 yp+25,Name:
 		Gui, Settings:Add, Edit, x+5 yp-3 w95 vEDIT_BTN3_Name hwndhEDIT_BTN3_Name R1,% config_Buttons.Button_3_Name
 		Gui, Settings:Add, Text, x+5 yp+3,Message:
 		Gui, Settings:Add, Edit, x+5 yp-3 w220 vEDIT_BTN3_Message hwndhEDIT_BTN3_Message R1,% config_Buttons.Button_3_Message
+
+        Gui, Settings:Add, GroupBox, x10 y+15 w500 h55 c000000,Button 4
+		Gui, Settings:Add, Text, x25 yp+25,Name:
+		Gui, Settings:Add, Edit, x+5 yp-3 w95 vEDIT_BTN4_Name hwndhEDIT_BTN4_Name R1,% config_Buttons.Button_4_Name
+		Gui, Settings:Add, Text, x+5 yp+3,Message:
+		Gui, Settings:Add, Edit, x+5 yp-3 w220 vEDIT_BTN4_Message hwndhEDIT_BTN4_Message R1,% config_Buttons.Button_4_Message
+
+        Gui, Settings:Add, GroupBox, x10 y+15 w500 h55 c000000,Button 5
+		Gui, Settings:Add, Text, x25 yp+25,Name:
+		Gui, Settings:Add, Edit, x+5 yp-3 w95 vEDIT_BTN5_Name hwndhEDIT_BTN5_Name R1,% config_Buttons.Button_5_Name
+		Gui, Settings:Add, Text, x+5 yp+3,Message:
+		Gui, Settings:Add, Edit, x+5 yp-3 w220 vEDIT_BTN5_Message hwndhEDIT_BTN5_Message R1,% config_Buttons.Button_5_Message
 
 		Gui, Settings:Add, Text, x10 y+20,% "v" PROGRAM.VERSION
 		Gui, Settings:Add, Link, x10 y+0 hwndhLINK_GitHub gGitHub_Link,% "<a href="""">GitHub</a>"
@@ -73,9 +85,13 @@
 		AddToolTip(hEDIT_BTN1_Name, "Name of the button as it will appear on the interface.")
 		AddToolTip(hEDIT_BTN2_Name, "Name of the button as it will appear on the interface.")
 		AddToolTip(hEDIT_BTN3_Name, "Name of the button as it will appear on the interface.")
+		AddToolTip(hEDIT_BTN4_Name, "Name of the button as it will appear on the interface.")
+		AddToolTip(hEDIT_BTN5_Name, "Name of the button as it will appear on the interface.")
 		AddToolTip(hEDIT_BTN1_Message, "Message that should be sent upon pressing this button.`nUse @%player% to send it as whisper to the player.")
 		AddToolTip(hEDIT_BTN2_Message, "Message that should be sent upon pressing this button.`nUse @%player% to send it as whisper to the player.")
 		AddToolTip(hEDIT_BTN3_Message, "Message that should be sent upon pressing this button.`nUse @%player% to send it as whisper to the player.")
+		AddToolTip(hEDIT_BTN4_Message, "Message that should be sent upon pressing this button.`nUse @%player% to send it as whisper to the player.")
+		AddToolTip(hEDIT_BTN5_Message, "Message that should be sent upon pressing this button.`nUse @%player% to send it as whisper to the player.")
 
 		GUI_Settings_Handles.EDIT_Transparency := hEDIT_Transparency
 		GUI_Settings_Handles.UPDOWN_Transparency := hUPDOWN_Transparency
@@ -98,6 +114,10 @@
 		GUI_Settings_Handles.EDIT_BTN2_Message := hEDIT_BTN2_Message
 		GUI_Settings_Handles.EDIT_BTN3_Name := hEDIT_BTN3_Name
 		GUI_Settings_Handles.EDIT_BTN3_Message := hEDIT_BTN3_Message
+        GUI_Settings_Handles.EDIT_BTN4_Name := hEDIT_BTN4_Name
+		GUI_Settings_Handles.EDIT_BTN4_Message := hEDIT_BTN4_Message
+        GUI_Settings_Handles.EDIT_BTN5_Name := hEDIT_BTN5_Name
+		GUI_Settings_Handles.EDIT_BTN5_Message := hEDIT_BTN5_Message
 
 		Gui, Settings:Show
 		Gui, Settings:Submit, NoHide
@@ -198,6 +218,10 @@
 		Set_Local_Config("BUTTONS", "Button_2_Message", """" GUI_Settings_Submit.EDIT_BTN2_Message """")
 		Set_Local_Config("BUTTONS", "Button_3_Name", GUI_Settings_Submit.EDIT_BTN3_Name)
 		Set_Local_Config("BUTTONS", "Button_3_Message", """" GUI_Settings_Submit.EDIT_BTN3_Message """")
+        Set_Local_Config("BUTTONS", "Button_4_Name", GUI_Settings_Submit.EDIT_BTN4_Name)
+		Set_Local_Config("BUTTONS", "Button_4_Message", """" GUI_Settings_Submit.EDIT_BTN4_Message """")
+        Set_Local_Config("BUTTONS", "Button_5_Name", GUI_Settings_Submit.EDIT_BTN5_Name)
+		Set_Local_Config("BUTTONS", "Button_5_Message", """" GUI_Settings_Submit.EDIT_BTN5_Message """")
 
 		localSettings := Get_LocalSettings()
 		Declare_LocalSettings(localSettings)

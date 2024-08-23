@@ -121,7 +121,7 @@ Download_New_Version() {
 GUI_Beautiful_Warning(params) {
 	global ProgramValues
 
-	guiWidthBase := 350, guiHeightBase := 50, guiHeightNoUnderline := 30
+	guiWidthBase := 600, guiHeightBase := 50, guiHeightNoUnderline := 30
 	guiFontName := "Consolas", guiFontSize := "10 Bold"
 
 	borderSize := 2, borderColor := params.Border_Color
@@ -181,7 +181,7 @@ Get_Text_Control_Size(txt, fontName, fontSize, maxWidth="") {
 	Gui, GetTextSize:Font, S%fontSize%,% fontName
 	if (maxWidth)
 		Gui, GetTextSize:Add, Text,x0 y0 +Wrap w%maxWidth% hwndTxtHandler,% txt
-	else 
+	else
 		Gui, GetTextSize:Add, Text,x0 y0 hwndTxtHandler,% txt
 	coords := Get_Control_Coords("GetTextSize", TxtHandler)
 	Gui, GetTextSize:Destroy

@@ -28,9 +28,13 @@
 	keysAndValues := { 	Button_1_Name:"[ Ask for Invite ]"
 						,Button_2_Name:"Button Two"
 						,Button_3_Name:"Button Three"
+						,Button_4_Name:"Button Four"
+						,Button_5_Name:"Button Five"
 						,Button_1_Message:"@%player% Hi. Invite, please?"
 						,Button_2_Message:"Message example Two"
-						,Button_3_Message:"Message example Three"}
+						,Button_3_Message:"Message example Three"
+						,Button_4_Message:"Message example Four"
+						,Button_5_Message:"Message example Five"}
 
 	for iniKey, iniValue in keysAndValues {
 		currentValue := Get_Local_Config(sect, iniKey)
@@ -70,7 +74,7 @@ Get_Local_Config(sect, key="") {
 	}
 	else {
 		IniRead, allKeys,% PROGRAM.INI_FILE,% sect
-		
+
 		keyAndValuesArr := {}
 		Loop, Parse, allKeys,% "`n`r"
 		{

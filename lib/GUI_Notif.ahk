@@ -23,16 +23,16 @@
 		Gui, Notif:New, -SysMenu +AlwaysOnTop +ToolWindow +HwndhGUI_Notif
 		Gui, Notif:Font,S8,Segoe UI
 
-		Gui, Notif:Add, Tab2, x0 y0 w302 h132 vTabCtrl hwndhTabCtrl gGUI_Notif.OnTabSwitch +Theme -Wrap
+		Gui, Notif:Add, Tab2, x0 y0 w615 h132 vTabCtrl hwndhTabCtrl gGUI_Notif.OnTabSwitch +Theme -Wrap
 		Gui, Notif:Tab
-		Gui, Notif:Add, Text, x10 y30 hwndTEXT_Player BackgroundTrans,Player: 
+		Gui, Notif:Add, Text, x10 y30 hwndTEXT_Player BackgroundTrans,Player:
 		Gui, Notif:Add, Text,% "xp+55 yp 0x0100 w" 210-(TimeSlot_W) " hwndhTEXT_PlayerSlot BackgroundTrans",
 		Gui, Notif:Add, Text, x10 y+7 hwndhTEXT_Keyword BackgroundTrans,Keyword:
 		Gui, Notif:Add, Text, xp+55 yp 0x0100 w230 hwndhTEXT_KeywordSlot BackgroundTrans,
 		Gui, Notif:Add, Text, x10 y+7 hwndhTEXT_Message BackgroundTrans,Message:
 		Gui, Notif:Add, Text, xp+55 yp 0x0100 w230 hwndhTEXT_MessageSlot BackgroundTrans,
 
-		Gui, Notif:Add, Button, x8 y+7 w95 h25 hwndhBTN_Msg1,% config_Buttons.Button_1_Name
+		Gui, Notif:Add, Button, x8 y+7 w120 h25 hwndhBTN_Msg1,% config_Buttons.Button_1_Name
 		__f := GUI_Notif.SendMsg.bind(GUI_Notif, "1")
 		GuiControl, Notif:+g,% hBTN_Msg1,% __f
 
@@ -44,7 +44,15 @@
 		__f := GUI_Notif.SendMsg.bind(GUI_Notif, "3")
 		GuiControl, Notif:+g,% hBTN_Msg3,% __f
 
-		Gui, Notif:Add, Button, hwndhBTN_Close x280 y21 w20 h20 gGUI_Notif.CloseTab,X
+        Gui, Notif:Add, Button, x+0 yp wp hp hwndhBTN_Msg4,% config_Buttons.Button_4_Name
+		__f := GUI_Notif.SendMsg.bind(GUI_Notif, "4")
+		GuiControl, Notif:+g,% hBTN_Msg4,% __f
+
+        Gui, Notif:Add, Button, x+0 yp wp hp hwndhBTN_Msg5,% config_Buttons.Button_5_Name
+		__f := GUI_Notif.SendMsg.bind(GUI_Notif, "5")
+		GuiControl, Notif:+g,% hBTN_Msg5,% __f
+
+		Gui, Notif:Add, Button, hwndhBTN_Close x593 y21 w20 h20 gGUI_Notif.CloseTab,X
 		Gui, Notif:Add, Text,% "xp-" (TimeSlot_W+5) " w" TimeSlot_W " yp+3 hwndhTEXT_TimeSlot BackgroundTrans 0x0100",00:00
 		Gui, Notif:Add, Text,% "x0 y0 w0 h0 hwndhTEXT_TimeFull BackgroundTrans"
 
@@ -59,8 +67,10 @@
 		GUI_Notif_Values.Button_1_Message := config_Buttons.Button_1_Message
 		GUI_Notif_Values.Button_2_Message := config_Buttons.Button_2_Message
 		GUI_Notif_Values.Button_3_Message := config_Buttons.Button_3_Message
+		GUI_Notif_Values.Button_4_Message := config_Buttons.Button_4_Message
+		GUI_Notif_Values.Button_5_Message := config_Buttons.Button_5_Message
 
-		Gui, Notif:Show, x0 y0 w300 h120 Hide,% PROGRAM.NAME
+		Gui, Notif:Show, x0 y0 w615 h120 Hide,% PROGRAM.NAME
 		OnMessage(0x200, "WM_MOUSEMOVE")
 		Gui, Notif:+LastFound
 		WinSet, Transparent,% cTransparency
@@ -86,7 +96,7 @@
 		Tabs_Infos[tabNum "_Message"] := ""
 		Tabs_Infos[tabNum "_Time"] := ""
 		Tabs_Infos[tabNum "_TimeFull"] := ""
-		
+
 		tabNumToReplace := tabNum
 		if (tabNum < TABS_COUNT) {
 			while (tabNumToReplace < TABS_COUNT) {
@@ -198,7 +208,7 @@
 	OnTabSwitch() {
 		global GUI_Notif_Handles, Tabs_Infos
 		GuiControlGet, tabNum, Notif:,% GUI_Notif_Handles.TabCtrl
-		
+
 		GuiControl, Notif:,% GUI_Notif_Handles.TEXT_PlayerSlot,% Tabs_Infos[tabNum "_Player"]
 		GuiControl, Notif:,% GUI_Notif_Handles.TEXT_KeywordSlot,% Tabs_Infos[tabNum "_Keyword"]
 		GuiControl, Notif:,% GUI_Notif_Handles.TEXT_MessageSlot,% Tabs_Infos[tabNum "_Message"]
